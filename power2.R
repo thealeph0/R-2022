@@ -1,17 +1,23 @@
-library(data.table)
-
 n <- readline(prompt="How many have been worked?: ")
-n1 <- as.numeric(n)
+n1 <- as.double(n)
 
-if (n1<0)
-  print("Invalid number of days worked")
+i <- 1
+mv <- 0
 
-n2 <- c(1:n1)
+while (n1 <= 0)
+{
+cat("Invalid number of days worked")
+  n <- readline(prompt="How many have been worked?: ")
+  n1 <- as.double(n)
+}
 
-v <- 2^(n2)*(0.01)
+while (i <= n1)
+  {
+  v <- 2^(i-1)*(0.01)
+  v1 <- round(v, digits = 2)
+  mv = mv + v1
+  i = i + 1
+  cat("$", v1, "\n")
+}
 
-Money <- c(v)
-
-x_df <- data.frame(Days_Worked = n2 , Income = Money)
-
-View(x_df)
+cat("The total money earned for working", n1 , "days is: $" ,mv)
