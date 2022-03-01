@@ -1,4 +1,5 @@
-v1 <- c(17,5,7,30,8,2,6,24,40,19)
+v <- c(17,5,7,30,8,2,6,24,40,19)
+v1 <- as.double(v)
 
 cat(v1,"\n")
 
@@ -10,5 +11,8 @@ m <- min(v2)
 M <- max(v2)
 
 cat("The min is:", m ,"\n")
-cat("The max is:", M)
+cat("The max is:", M, "\n")
 
+a <- mean(v2)
+
+cat("The average is:", a)
