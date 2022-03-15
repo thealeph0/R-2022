@@ -1,0 +1,23 @@
+i <- 1
+
+n <- readline(prompt="How many tests did you take this semester?: ") #Asks the user to input the radius
+n1 <- as.numeric(n) #Convert the character to float
+
+x <- 1:n1
+
+m1 <- c()
+
+while(i <= n1)
+{
+  p <- x[i]
+  M <- readline(prompt = cat("Enter you score for Exam", p))
+  m1 <- as.numeric(c(m1 , M))
+  i = i+1
+}
+
+orgscores <- sort(m1)
+
+print(orgscores)
+list2 <- sum(orgscores[2:n1])
+
+print(list2)
